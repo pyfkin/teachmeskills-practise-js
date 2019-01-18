@@ -74,7 +74,7 @@ class Bank {
     get loanPercentagePerYear() { return this.prop }
     set loanPercentagePerYear(prop) { this.amount = prop}
 
-    checkIfUserCanByGood(user, good){}
+    checkIfUserCanByGood(user, good){ }
 }
 
 let app = new App();
