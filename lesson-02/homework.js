@@ -37,8 +37,12 @@ class App {
         }
         return goods;
     };
-    static startCheck(){
-        return alert('Второй коммит');
+    startCheck(){
+        users.forEach((user) => {
+            goods.forEach((good) => {
+                Bank.checkIfUserCanByGood(user, good);
+            })
+        })
     }
 }
 
@@ -46,7 +50,7 @@ class User {
     constructor(firstName, lastName, income){
         this.firstName = firstName;
         this.lastName = lastName;
-         this.income = income;
+        this.income = income;
     }
     get getFirstName() { return this.firstName }
     set SetFirstName(firstName) { this.firstName = firstName}
@@ -71,10 +75,14 @@ class Good {
 }
 
 class Bank {
-    get loanPercentagePerYear() { return this.prop }
-    set loanPercentagePerYear(prop) { this.amount = prop}
+    get getLoanPercentagePerYear() { return this.LoanPercentagePerYear }
+    set setLoanPercentagePerYear(LoanPercentagePerYear) { this.LoanPercentagePerYear = LoanPercentagePerYear}
 
-    checkIfUserCanByGood(user, good){ }
+    static checkIfUserCanByGood(user, good){
+        if ((user.income * 5) > good.price)
+            console.log(`Пользователь '${user.firstName} ${user.lastName}' с зарплатой ${user.income} может получить ссуде на '${good.name}' стоимостью ${good.price}`);
+        else console.log(`К сожалению пользователю '${user.firstName} ${user.lastName}' с зарплатой ${user.income} отказано в ссуду на '${good.name}' стоимостью ${good.price}\`);`);
+    }
 }
 
 let app = new App();
