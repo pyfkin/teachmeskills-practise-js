@@ -81,7 +81,7 @@ class Bank {
     static checkIfUserCanByGood(user, good){
         if ((user.income * 5) > good.price)
             console.log(`Пользователь '${user.firstName} ${user.lastName}' с зарплатой ${user.income} может получить ссуду на '${good.name}' стоимостью ${good.price}`);
-        else console.log(`К сожалению пользователю '${user.firstName} ${user.lastName}' с зарплатой ${user.income} отказано в ссуде на '${good.name}' стоимостью ${good.price}\`);`);
+        else console.log(`К сожалению пользователю '${user.firstName} ${user.lastName}' с зарплатой ${user.income} отказано в ссуде на '${good.name}' стоимостью ${good.price}`);`);
     }
 }
 
