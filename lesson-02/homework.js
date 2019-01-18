@@ -38,7 +38,7 @@ class App {
         return goods;
     };
     static startCheck(){
-        return alert('nhdgfsd');
+        return alert('Второй коммит');
     }
 }
 
@@ -79,4 +79,5 @@ class Bank {
 
 let app = new App();
 app.run();
+app.startCheck();
 
