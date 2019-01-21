@@ -2,19 +2,24 @@
 // It should be wrapped into Promise. If a number from 1 to 5 - it should be resolved successfully.
 // If a number from 6 to 10 - it should be resolved with error.
 
-let randomNumber = function (){
+let randomNumber = function(){
     return Math.floor(Math.random()*11);
 };
 
+let promise = new Promise(function(resolve, reject) {
+    setTimeout(() => {
+        let rn = randomNumber();
+        if (rn >= 1 && rn <= 5) {
+            resolve(`Random number ${rn}: successfully`);
+        } else {
+            reject(`Random number ${rn}: error`);
+        }
+    }, 1000);
 
-setTimeout(func, 3000);
-
-let p = new Promise(function(randomNumber) {
-    if (randomNumber >= 1 && randomNumber <= 5) {
-        resolve(alert('successfully'));  // fulfilled successfully (успешный результат)
-    } else {
-        reject(alert('error'));  // rejected (ошибка)
-    }
 });
 
-p();
+promise
+    .then(
+        (val) => console.log("Промис успешно выполнен. ", val),
+        (err) => console.log("Промис выполнен с ошибкой. ", err));
+console.log('asdf');
