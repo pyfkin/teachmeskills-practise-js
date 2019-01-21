@@ -16,6 +16,7 @@ class App {
     run(){
         this.generateUsers();
         this.generateGoods();
+        this.startCheck();
     }
     generateUsers() {
         let firstName, lastName, income;
@@ -87,5 +88,4 @@ class Bank {
 
 let app = new App();
 app.run();
-app.startCheck();
 
