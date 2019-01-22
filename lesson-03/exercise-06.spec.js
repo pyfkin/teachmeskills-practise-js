@@ -9,7 +9,7 @@ describe('Bind, Call, Apply', () => {
       lastName: 'Pupkin',
     };
 
-    const bindMethod = methods.fullName.bind(user);//FIXME
+    const bindMethod = methods.fullName.bind(user);
 
 
     //Do not touch this line!!!
