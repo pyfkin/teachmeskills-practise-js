@@ -6,6 +6,6 @@ describe('Exercise 03', () => {
     chai.expect(sortAlph("a7fs23l1n4o6x")).to.eql("123467aflnosx");
   });
   it('should sort string correctly 3', () => {
-    chai.expect(sortAlph("qdrxhswvptguaofnemijckzybl")).to.eql("abcdefghijklmnopqrstuvwxyz");
+    chai.expect(sortAlph("ijckzqdrxhswvptguaofnemybl")).to.eql("abcdefghijklmnopqrstuvwxyz");
   });
 });

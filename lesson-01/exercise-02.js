@@ -15,6 +15,7 @@
 const removeIfCondition = (arr, func) => {
     const newArr = [];
 arr.forEach((arrayItem) => {
+    alert(func(arrayItem));
     if (func(arrayItem) !== true) {
         console.log(arrayItem);
         newArr.push(arrayItem);

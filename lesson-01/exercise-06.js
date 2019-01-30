@@ -14,7 +14,7 @@ let promise = new Promise(function(resolve, reject) {
         } else {
             reject(`Random number ${rn}: error`);
         }
-    }, 1000);
+    },0);
 
 });
 

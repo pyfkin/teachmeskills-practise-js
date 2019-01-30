@@ -1,5 +1,5 @@
 // Exercise 07: Create function generator to iterate given array.
-function *arrayIterator(arr) {
+function* arrayIterator(arr) {
   // Solution here...
     let i = 0;
 
@@ -10,6 +10,9 @@ function *arrayIterator(arr) {
 
 }
 
-var numbers = arrayIterator([1,2,3,4,5]); // возвращает перебираемый объект
+let numbers = arrayIterator([1,2,3,4,5]); // возвращает перебираемый объект
 
-console.log(numbers.next().value);
+for (let i=0; i < 5; i++) {
+    console.log(numbers.next().value);
+}
+

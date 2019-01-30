@@ -15,4 +15,4 @@ const isSorted = (arr) => {
   if (asc === arr.length - 1 && desc === 0) return 1;
     else if (desc === arr.length - 1 && asc === 0) return -1;
     else return 0;
-  }
+  };
