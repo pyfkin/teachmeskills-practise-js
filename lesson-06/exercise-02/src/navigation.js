@@ -6,22 +6,23 @@ class Navigation
 
     render(data, index, testDone, indexChangedHandler){
         this.container.innerHTML = null;
-        this.prevBtn = document.createElement('button');
-        this.prevBtn.className = 'prev-btn';
-        this.prevBtn.innerHTML = 'Предыдущий';
-        this.container.appendChild(this.prevBtn);
-        this.nextBtn = document.createElement('button');
-        this.nextBtn.className = 'next-btn';
-        this.nextBtn.innerHTML = 'Следующий';
-        this.container.appendChild(this.nextBtn);
-        this.prevBtn.addEventListener('click', () => {
+
+        let prevBtn = document.createElement('button');
+        prevBtn.className = 'prev-btn';
+        prevBtn.innerHTML = 'Предыдущий';
+        this.container.appendChild(prevBtn);
+        let nextBtn = document.createElement('button');
+        nextBtn.className = 'next-btn';
+        nextBtn.innerHTML = 'Следующий';
+        this.container.appendChild(nextBtn);
+        prevBtn.addEventListener('click', () => {
             let prevIndex = index - 1;
             if (prevIndex < 0) {
                 prevIndex = data.length - 1;
             }
             indexChangedHandler(prevIndex);
         });
-        this.nextBtn.addEventListener('click', () => {
+        nextBtn.addEventListener('click', () => {
             let nextIndex = index + 1;
             if (nextIndex >= data.length) {
                 nextIndex = 0;
@@ -30,8 +31,8 @@ class Navigation
         });
 
         if  (testDone){
-            this.prevBtn.disabled = true;
-            this.nextBtn.disabled = true;
+            prevBtn.disabled = true;
+            nextBtn.disabled = true;
         }
     }
 }
