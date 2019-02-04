@@ -1,28 +1,20 @@
 class Questions
 {
-    constructor(){
+    constructor()
+    {
         this.container = document.getElementById("questions");
-
-
-
-
-
     }
 
-    loadQuestionAndAnswers(data){
+    loadQuestionAndAnswers(data)
+    {
         this.question.innerHTML = data.question;
         this.labelForAnswer1.innerHTML += data.answers[0].title;
         this.labelForAnswer2.innerHTML += data.answers[1].title;
         this.labelForAnswer3.innerHTML += data.answers[2].title;
-
-
     }
 
-    acceptAnswerHandler(data, index){
-
-    }
-
-    render(data, multiplied, answerChangedHandler){
+    render(data, count, multiplied, testDone, answerChangedHandler)
+    {
         this.container.innerHTML = null;
 
         this.question = document.createElement('p');
@@ -36,16 +28,12 @@ class Questions
         this.answer3 = document.createElement('input');
         this.acceptBtn = document.createElement('button');
 
-
-
-
-
         this.question.className = 'question';
-        if (multiplied){
+        if (multiplied) {
             this.answer1.type = 'checkbox';
             this.answer2.type = 'checkbox';
             this.answer3.type = 'checkbox';
-        } else{
+        } else {
             this.answer1.type = 'radio';
             this.answer2.type = 'radio';
             this.answer3.type = 'radio';
@@ -55,15 +43,11 @@ class Questions
         }
 
         this.labelForAnswer1.appendChild(this.answer1);
-
         this.labelForAnswer2.appendChild(this.answer2);
-
         this.labelForAnswer3.appendChild(this.answer3);
 
         this.acceptBtn.className = 'accept-btn';
         this.acceptBtn.innerText = 'Принять';
-
-
 
         this.container.appendChild(this.question);
         this.answerContainer.appendChild(this.labelForAnswer1);
@@ -72,15 +56,26 @@ class Questions
         this.container.appendChild(this.answerContainer);
         this.container.appendChild(this.acceptBtn);
         this.loadQuestionAndAnswers(data);
-        this.acceptBtn.addEventListener('click', () =>{
-            let nextIndex = index + 1;
-            if (nextIndex > data.length) {
-                nextIndex = index;
-            }
-            let qwe = 1;
-            answerChangedHandler(nextIndex, qwe);
+        this.acceptBtn.addEventListener('click', () =>
+        {
+            let right = true;
+            let userAnswers = [];
+            let checkBoxList = this.container.querySelectorAll('input');
+            checkBoxList.forEach((item, index) =>
+            {
+                if (item.checked) userAnswers.push(index + 1);
+            });
+            if (userAnswers.length === data.correctAnswers.length) {
+                for (let i = 0; i < userAnswers.length; i++) {
+                    if (userAnswers[i] !== data.correctAnswers[i])
+                        right = false;
+                }
+            } else right = false;
+            answerChangedHandler(right);
         });
-
+        if  (testDone) {
+            this.acceptBtn.disabled = true;
+        }
     }
 }
 

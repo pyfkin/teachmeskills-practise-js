@@ -2,26 +2,22 @@ class AnswersStatus
 {
     constructor(){
         this.container = document.getElementById("answer-status");
+        // this.answeredList = [];
     }
 
-    changeQuestionHandler(e){
-        // e.target.value
-    }
-
-    render(data, index){
+    render(data, index, answered){
         this.container.innerHTML = null;
-
         this.container.className = 'questionsList';
-        for (let i = 0; i < 10; i++){
+        for (let i = 0; i < data.length; i++){
             let question = document.createElement('input');
             question.className = 'question' + ' _' + (i + 1);
             question.name = 'questionList';
             question.type = 'radio';
             question.value = i + 1;
-            if (i === index){
+            if (answered[i])
+                question.disabled = true;
+            if (i === index)
                 question.checked = true;
-            }
-            question.addEventListener('click', this.changeQuestionHandler);
             this.container.appendChild(question);
         }
     }
