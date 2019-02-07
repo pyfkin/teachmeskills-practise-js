@@ -3,7 +3,7 @@
 // 'use strict';
 let table = document.querySelector('#sampleTable');
 let tr = document.querySelector('template').content.querySelector('tr');
-var a = 5;
+let a = 5;
 function insert_Row()
 {
     for (let i = 0; i < 3; i++) {

@@ -4,7 +4,7 @@
 
 const extractEmail = (string) => {
   // Solution here...
-    var re = /(\w){1,}@(\w){1,}.(\w){1,}/g;
+    let re = /(\w){1,}@(\w){1,}.(\w){1,}/g;
     let a = string.match(re);
     return a === null ? null : a[0];
 };

@@ -4,7 +4,7 @@
 
 const checkUrl = (string) => {
   // Solution here...
-    var re = /http(|s):[\/][\/][\w-]{1,}.(\w){1,}.(\w){1,}/g;
+    let re = /http(|s):[\/][\/][\w-]{1,}.(\w){1,}.(\w){1,}/g;
     let a = string.match(re);
-    return a === null ? false : true;
+    return a !== null;
 };
