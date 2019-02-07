@@ -32,6 +32,15 @@ function moveDown() {
     if (cell.i !== 9){
         table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
         table.rows[++cell.i].cells[cell.j].classList.toggle('activeCell');
+    } else if (cell.j !== 9) {
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.i = 0;
+        table.rows[cell.i].cells[++cell.j].classList.toggle('activeCell');
+    } else {
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.i = 0;
+        cell.j = 0;
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
     }
 }
 
@@ -39,6 +48,15 @@ function moveLeft() {
     if (cell.j !== 0){
         table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
         table.rows[cell.i].cells[--cell.j].classList.toggle('activeCell');
+    } else if (cell.i !== 0){
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.j = 9;
+        table.rows[--cell.i].cells[cell.j].classList.toggle('activeCell');
+    } else {
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.i = 9;
+        cell.j = 9;
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
     }
 }
 
@@ -46,6 +64,15 @@ function moveRight() {
     if (cell.j !== 9){
         table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
         table.rows[cell.i].cells[++cell.j].classList.toggle('activeCell');
+    } else if (cell.i !== 9){
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.j = 0;
+        table.rows[++cell.i].cells[cell.j].classList.toggle('activeCell');
+    } else {
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+        cell.i = 0;
+        cell.j = 0;
+        table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
     }
 }
 
@@ -53,7 +80,16 @@ function moveUp() {
     if (cell.i !== 0){
         table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
         table.rows[--cell.i].cells[cell.j].classList.toggle('activeCell');
-    }
+    } else if (cell.j !== 0) {
+    table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+    cell.i = 9;
+    table.rows[cell.i].cells[--cell.j].classList.toggle('activeCell');
+} else {
+    table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+    cell.i = 9;
+    cell.j = 9;
+    table.rows[cell.i].cells[cell.j].classList.toggle('activeCell');
+}
 }
 
 const moves = {
@@ -61,10 +97,10 @@ const moves = {
     '1099': moveDown,
     '1094': moveUp,
     '1074': moveRight,
-    '97': moveLeft,
-    '115': moveDown,
-    '119': moveUp,
-    '100': moveRight
+    '97'  : moveLeft,
+    '115' : moveDown,
+    '119' : moveUp,
+    '100' : moveRight
 };
 
 const root = document.getElementById('container');
