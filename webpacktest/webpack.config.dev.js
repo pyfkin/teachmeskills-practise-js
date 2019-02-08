@@ -1,7 +1,6 @@
 const path = require('path');
 
 const conf = {
-    // extends : './webpack.config.common.js',
     entry: './src/index.js',
     mode: 'development',
     output: {
