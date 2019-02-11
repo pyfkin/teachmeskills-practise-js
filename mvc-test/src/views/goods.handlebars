@@ -1,0 +1,13 @@
+{{#> layout }}
+    {{#*inline "content"}}
+        <h1>Goods list:</h1>
+        {{#each goods as |good|}}
+            <div class="good-item">
+                <div>Title: {{good.title}}</div>
+                <div>Description: {{good.description}}</div>
+                <div><img width="100" src="{{good.image}}"></div>
+            </div>
+
+        {{/each}}
+    {{/inline}}
+{{/layout}}
