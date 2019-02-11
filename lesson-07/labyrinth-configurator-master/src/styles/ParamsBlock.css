@@ -1,0 +1,11 @@
+.params-block input {
+  width: 50px;
+}
+
+.input-row {
+  padding-bottom: 10px;
+}
+
+.input-row label {
+  width: 50%;
+}

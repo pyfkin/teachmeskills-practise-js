@@ -1,0 +1,8 @@
+.labyrinth-definition {
+  height: 450px;
+}
+
+.labyrinth-definition textarea {
+  width: 100%;
+  height: 100%;
+}
