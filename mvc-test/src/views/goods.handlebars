@@ -1,13 +1,22 @@
 {{#> layout }}
-    {{#*inline "content"}}
-        <h1>Goods list:</h1>
-        {{#each goods as |good|}}
-            <div class="good-item">
-                <div>Title: {{good.title}}</div>
-                <div>Description: {{good.description}}</div>
-                <div><img width="100" src="{{good.image}}"></div>
-            </div>
 
-        {{/each}}
-    {{/inline}}
+{{#*inline "content"}}
+    <h1>Goods list:</h1>
+    {{#each goods}}
+        <div class="good-item">
+            <div>Title: {{title}}</div>
+            <div>Description:
+                {{#if description}}
+                    {{description}}
+                {{else}}
+                    {{../testvar}}
+                {{/if}}
+            </div>
+            <div>
+                <img width="100" src="{{image}}">
+            </div>
+        </div>
+    {{/each}}
+{{/inline}}
+
 {{/layout}}

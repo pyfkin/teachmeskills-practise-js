@@ -6,7 +6,7 @@ class HomeController
 {
     render(){
 
-        return homeTemplate();
+        return homeTemplate({name : 'vbrelwibrg'});
     }
 }
 

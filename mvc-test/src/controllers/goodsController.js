@@ -6,7 +6,7 @@ class GoodsController {
         let goods = getGoods();
 
         return goodsTemplate({
-            goods, testvar:"testvalue"
+            goods, testvar: 'testvalue'
         });
     }
 }

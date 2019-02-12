@@ -1,11 +1,11 @@
 import Navigo from 'navigo';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import $ from 'jquery';
+
 import homeController from './controllers/homeController';
-import goodsController from './controllers/goodsController';
-import $ from 'jquery'
 
+let router = new Navigo(null, true, '#');
 
-const router = new Navigo(null, true, '#');
 const render = (html) => {
     $('#content').html(html);
 };
@@ -13,9 +13,5 @@ const render = (html) => {
 router
     .on('/', () => {
         render(homeController.render());
-    })
-    .on('/goods', () => {
-        render(goodsController.render());
-    })
-    .resolve();
-
+    });
+router.resolve();

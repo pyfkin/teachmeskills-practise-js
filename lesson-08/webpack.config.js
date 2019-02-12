@@ -20,7 +20,7 @@ const conf = {
         ]
     },
     devServer: {
-        port: 5020,
+        port: 8080,
         open: true,
     }
 };
