@@ -14,7 +14,7 @@ router
     .on('/', () => {
         render(homeController.render());
     })
-    .on('/goods', () => {
+    .on('/good', () => {
         render(goodsController.render());
     })
     .resolve();
