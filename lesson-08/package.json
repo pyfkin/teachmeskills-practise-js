@@ -5,7 +5,7 @@
   "main": "exercise-01.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev" : "webpack-dev-server --mode development"
+    "dev": "webpack-dev-server --mode development"
   },
   "author": "",
   "license": "ISC",
@@ -17,6 +17,7 @@
   "dependencies": {
     "bootstrap": "^4.3.0",
     "css-loader": "^2.1.0",
+    "handlebars": "^4.1.0",
     "handlebars-loader": "^1.7.1",
     "jquery": "^3.3.1",
     "navigo": "^7.1.2",

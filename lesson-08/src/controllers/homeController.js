@@ -1,6 +1,7 @@
 import homeTemplate from '../views/home.handlebars'
 
-class HomeController {
+class HomeController
+{
     render(){
 
         return homeTemplate();
