@@ -4,6 +4,7 @@ import $ from 'jquery';
 
 import homeController from './controllers/homeController';
 import currenciesController from './controllers/currenciesController';
+import historyController from "./controllers/historyController";
 
 
 let router = new Navigo(null, true, '#');
@@ -13,11 +14,15 @@ const render = (html) => {
 };
 
 router
-    .on('/', () => {
+    .on('/', async () => {
         render(homeController.render());
     })
-    .on('/currencies', () =>{
-        render(currenciesController.render());
+    .on('/currencies', async () =>{
+        render(await currenciesController.render());
     })
+    .on('/history', () =>{
+        render((historyController.render()))
+    })
+    .on()
 ;
 router.resolve();

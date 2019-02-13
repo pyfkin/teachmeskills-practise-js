@@ -1,12 +1,18 @@
 import currenciesTemplate from '../views/currencies.handlebars';
-import {getCurrenciesList} from "../models/currenciesList";
+import {getCurrenciesList} from '../models/currenciesList';
 
 class CurrenciesController
 {
-    async render(){
-    let currenciesList = await getCurrenciesList('http://data.fixer.io/api/latest?access_key=3fa257c6fba931432adcc9e5b5933250');
-        return currenciesTemplate({currenciesList});
+      async render(){
+        let currenciesList = await getCurrenciesList();
+        let currenciesListArray = [];
+        for (let item in currenciesList){
+            currenciesListArray.push({ name : item,
+                                       value : currenciesList[item]});
+        }
+        return currenciesTemplate({currenciesListArray});
     }
 }
+
 
 export default new CurrenciesController();

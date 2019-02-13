@@ -15,8 +15,8 @@ async function getPhotos(url)
     let response = await fetch(url);
     if (response.status === 200){
         let dogJson = await response.json();
-        console.log(dogJson.message);
-        return dogJson.message;
+        console.log(dogJson.rates);
+        return dogJson.rates;
     }
 
     throw alert(new Error(response.status));
@@ -31,9 +31,9 @@ btnShowDog.addEventListener('click', async function (e)
     }
 
     for (let i=0; i < 10; i++) {
-        let dogPhotoSrc = await getPhotos('https://dog.ceo/api/breeds/image/random');
-        let img = document.createElement("IMG");
-        img.src = dogPhotoSrc;
+        let dogPhotoSrc = await getPhotos('http://data.fixer.io/api/latest?access_key=3fa257c6fba931432adcc9e5b5933250&symbols=USD,AUD,CAD,PLN,MXN&format=1');
+        let img = document.createElement("p");
+        img.innerText = dogPhotoSrc;
         canvas.appendChild(img);
     }
     }

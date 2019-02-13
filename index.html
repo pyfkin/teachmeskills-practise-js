@@ -26,8 +26,19 @@
 <!--npm i webpack webpack-cli webpack-dev-server &#45;&#45;save-dev-->
 <!--npm i navigo &#45;&#45;save-->
 <!--npm i handlebars-loader &#45;&#45;save-->
-<!--npm i bootstrap popper.js jquery &#45;&#45;save-->
+npm i bootstrap popper.js jquery --save
 <!--npm i css-loader style-loader &#45;&#45;save-->
+
+
+<!--npm i &#45;&#45;save-dev babel-loader@7 babel-core babel-preset-env babel-preset-stage-3-->
+<!--в файл ".babelrc" добавить текст: {"presets" : ["env", "stage-3"]}-->
+<!--и в "config":module: {-->
+                <!--rules: [{-->
+                    <!--test: /\.js$/,-->
+                    <!--loader: 'babel-loader'-->
+                    <!--}]-->
+                <!--}-->
+
 
 <!--"dev" : "webpack-dev-server &#45;&#45;mode development"-->
 

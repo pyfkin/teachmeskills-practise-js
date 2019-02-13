@@ -8,7 +8,8 @@ const conf = {
         filename: "main.js"
     },
     module: {
-        rules: [{
+        rules: [
+            {
             test: /\.js$/,
             loader: "babel-loader",
         },

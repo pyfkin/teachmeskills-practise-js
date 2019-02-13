@@ -1,5 +1,20 @@
-{{#> layout}}
+{{#> layout }}
     {{#*inline "content"}}
-        <h6>здесь будут курсы валют {{currenciesList}}</h6>
+        <h2>Актуальные курсы валют: </h2>
+        {{#each currenciesListArray}}
+             <div class="currency-item">
+                 <div>Name: <strong>{{name}}</strong>. Value: <strong>{{value}}</strong></div>
+                 </div>
+             {{/each}}
     {{/inline}}
-{{/layout}}
+
+{{/layout }}
+
+
+
+
+
+
+
+
+

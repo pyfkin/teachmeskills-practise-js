@@ -22,7 +22,8 @@ const conf = {
     devServer: {
         port: 8080,
         open: true,
-    }
+    },
+    devtool: 'sourcemap'
 };
 
 module.exports = conf;
