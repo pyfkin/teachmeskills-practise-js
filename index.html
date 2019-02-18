@@ -2,31 +2,47 @@
 <head>
   <meta charset="utf-8">
   <title>Mocha Tests</title>
-  <link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />
+  <!--<link href="https://unpkg.com/mocha@4.0.1/mocha.css" rel="stylesheet" />-->
 </head>
 <body>
 <div id="mocha"></div>
 
-<script src="https://unpkg.com/chai@4.1.2/chai.js"></script>
-<script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>
+<script>
+  function digital_root(n) {
+        let s = n.toString();
+        let ms = 0;
 
-<script>mocha.setup('bdd')</script>
+        for (let i = 0; i < s.length; i++) {
+            ms += Number(s[i]);
+        }
+      return ms > 9 ? digital_root(ms) : ms;
+
+    }
+
+    console.log(digital_root(99912));
+</script>
+
+
+<!--<script src="https://unpkg.com/chai@4.1.2/chai.js"></script>-->
+<!--<script src="https://unpkg.com/mocha@4.0.1/mocha.js"></script>-->
+
+<!--<script>mocha.setup('bdd')</script>-->
 
 <!-- This is the place to include your tests -->
 <!--<script type="text/javascript" src="lesson-04/homework/index.js"></script>-->
 <!--<script type="text/javascript" src="lesson-03/exercise-05.spec.js"></script>-->
 
 
-<script>
-  mocha.checkLeaks();
-  mocha.run();
-</script>
+<!--<script>-->
+  <!--mocha.checkLeaks();-->
+  <!--mocha.run();-->
+<!--</script>-->
 </body>
 </html>
 <!--npm i webpack webpack-cli webpack-dev-server &#45;&#45;save-dev-->
 <!--npm i navigo &#45;&#45;save-->
 <!--npm i handlebars-loader &#45;&#45;save-->
-npm i bootstrap popper.js jquery --save
+<!--npm i bootstrap popper.js jquery &#45;&#45;save-->
 <!--npm i css-loader style-loader &#45;&#45;save-->
 
 
