@@ -5,33 +5,33 @@ import answersStatus from "./answersStatus";
 import data from "./data";
 import {calculateScore} from "./services/utils";
 
-class App {
-  constructor() {
+function App() {
+
     this.currentIndex = 0;
     this.navigation = navigation;
     this.questions = questions;
     this.answersStatus = answersStatus;
     this.userAnswers = {};
-  }
 
-  indexChanged(value) {
+
+  this.indexChanged = function(value) {
     this.currentIndex = value;
 
     this._renderItems();
   }
 
-  onAnswerChange(state) {
+  this.onAnswerChange = function(state) {
     this.userAnswers[this.currentIndex] = state;
   }
 
-  _onSubmitHandler() {
+  this._onSubmitHandler = function() {
     let score = calculateScore(data, this.userAnswers);
     if (confirm(`Your score is: ${score}. Do you want to start from scratch?`)) {
       window.location.reload();
     }
   }
 
-  _renderSubmitButton(data) {
+    this._renderSubmitButton = function(data) {
     if (this.currentIndex === data.length - 1) {
       let submitButtonEl = document.createElement("button");
       submitButtonEl.id = "submit-button";
@@ -43,14 +43,14 @@ class App {
     }
   }
 
-  _renderItems() {
+  this._renderItems = function() {
     this.navigation.render(data, this.currentIndex, this.indexChanged.bind(this));
     this.answersStatus.render(data, this.currentIndex, this.indexChanged.bind(this));
     this.questions.render(data[this.currentIndex], this.userAnswers[this.currentIndex], this.onAnswerChange.bind(this));
     this._renderSubmitButton(data);
   }
 
-  run() {
+  this.run = function() {
     this._renderItems();
   }
 }
