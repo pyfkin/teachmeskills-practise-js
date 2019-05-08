@@ -15,7 +15,7 @@
     "webpack-dev-server": "^3.1.14"
   },
   "dependencies": {
-    "bootstrap": "^4.3.0",
+    "bootstrap": "^4.3.1",
     "css-loader": "^2.1.0",
     "handlebars": "^4.1.0",
     "handlebars-loader": "^1.7.1",
